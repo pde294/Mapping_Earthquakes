@@ -33,7 +33,10 @@ L.control.layers(baseMaps).addTo(map);
 
 
 // Accessing the Toronto neighborhoods GeoJSON URL.
-let torontoHoods = "https://raw.githubusercontent.com/pde294/Mapping_Earthquakes/Mapping_GeoJSON_Polygons/Mapping_GeoJSON_Polygons/torontoNeighborhoods.json";
+let torontoHoods = "https://raw.githubusercontent.com/pde294/Mapping_Earthquakes/Mapping_GeoJSON_Polygons/torontoNeighborhoods.json";
+let myStyle = {
+  color: "#ffffa1",
+  weight: 2
 
 // Grabbing our GeoJSON data.
 d3.json(torontoHoods).then(function(data) {
@@ -41,4 +44,3 @@ d3.json(torontoHoods).then(function(data) {
   // Creating a GeoJSON layer with the retrieved data.
   L.geoJson(data).addTo(map);
 });
-
